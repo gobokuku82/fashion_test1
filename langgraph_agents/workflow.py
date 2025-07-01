@@ -28,36 +28,36 @@ class FashionWorkflow:
         workflow = StateGraph(FashionState)
         
         # 노드 추가
-        workflow.add_node("data_collection", self._data_collection_step)
-        workflow.add_node("trend_analysis", self._trend_analysis_step)
-        workflow.add_node("sentiment_analysis", self._sentiment_analysis_step)
-        workflow.add_node("content_generation", self._content_generation_step)
-        workflow.add_node("human_feedback", self._human_feedback_step)
+        workflow.add_node("step_1_collect", self._data_collection_step)
+        workflow.add_node("step_2_trends", self._trend_analysis_step)
+        workflow.add_node("step_3_sentiment", self._sentiment_analysis_step)
+        workflow.add_node("step_4_content", self._content_generation_step)
+        workflow.add_node("step_5_feedback", self._human_feedback_step)
         
         # 시작점 설정
-        workflow.set_entry_point("data_collection")
+        workflow.set_entry_point("step_1_collect")
         
         # 엣지 연결 (플로우 정의)
-        workflow.add_edge("data_collection", "trend_analysis")
-        workflow.add_edge("trend_analysis", "sentiment_analysis")
-        workflow.add_edge("sentiment_analysis", "content_generation")
+        workflow.add_edge("step_1_collect", "step_2_trends")
+        workflow.add_edge("step_2_trends", "step_3_sentiment")
+        workflow.add_edge("step_3_sentiment", "step_4_content")
         
         # 조건부 엣지: 휴먼 피드백 필요 여부에 따라 분기
         workflow.add_conditional_edges(
-            "content_generation",
+            "step_4_content",
             self._should_get_human_feedback,
             {
-                "human_feedback": "human_feedback",
+                "needs_feedback": "step_5_feedback",
                 "end": END
             }
         )
         
         # 휴먼 피드백 후 다시 콘텐츠 생성으로 돌아가거나 종료
         workflow.add_conditional_edges(
-            "human_feedback",
+            "step_5_feedback",
             self._should_continue_after_feedback,
             {
-                "continue": "content_generation",
+                "continue": "step_4_content",
                 "end": END
             }
         )
@@ -140,7 +140,7 @@ class FashionWorkflow:
         ]
         
         if any(conditions):
-            return "human_feedback"
+            return "needs_feedback"
         else:
             return "end"
     
