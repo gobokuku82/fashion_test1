@@ -4,8 +4,13 @@ Global settings configuration for Fashion AI Automation System
 
 import os
 from typing import Optional
-from pydantic import BaseSettings
 import streamlit as st
+
+try:
+    from pydantic_settings import BaseSettings
+except ImportError:
+    # Pydantic v1 호환성
+    from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
@@ -39,6 +44,7 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+        extra = "ignore"  # 정의되지 않은 환경변수 무시
     
     @classmethod
     def from_streamlit_secrets(cls) -> "Settings":

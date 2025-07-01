@@ -293,6 +293,18 @@ class NaverAPIClient:
         
         return all_results
     
+    def get_sample_shopping_data(self) -> Dict[str, Any]:
+        """테스트용 샘플 쇼핑 데이터 반환"""
+        return self._get_sample_shopping_data("패션")
+    
+    def get_sample_blog_data(self) -> Dict[str, Any]:
+        """테스트용 샘플 블로그 데이터 반환"""
+        return self._get_sample_blog_data("패션")
+    
+    def get_sample_news_data(self) -> Dict[str, Any]:
+        """테스트용 샘플 뉴스 데이터 반환"""
+        return self._get_sample_news_data("패션")
+    
     def is_api_available(self) -> bool:
         """API 사용 가능 여부 확인"""
         return bool(self.client_id and self.client_secret) 

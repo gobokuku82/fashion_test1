@@ -1,0 +1,60 @@
+{
+  "trends": [
+    {
+      "category": "여름 패션",
+      "keyword": "크롭탑",
+      "trend_score": 85,
+      "description": "Y2K 패션의 영향으로 크롭탑이 다시 인기를 얻고 있음",
+      "related_items": ["하이웨스트 진", "미니스커트", "레이어드 탑"],
+      "target_demographic": "20-30대 여성",
+      "growth_rate": 23.5,
+      "timestamp": "2024-01-15T10:00:00Z"
+    },
+    {
+      "category": "지속가능 패션",
+      "keyword": "업사이클링",
+      "trend_score": 78,
+      "description": "환경 의식 증가로 업사이클링 패션 제품 수요 상승",
+      "related_items": ["재활용 원단", "빈티지 리메이크", "친환경 소재"],
+      "target_demographic": "전 연령층",
+      "growth_rate": 18.2,
+      "timestamp": "2024-01-15T10:05:00Z"
+    },
+    {
+      "category": "액세서리",
+      "keyword": "청키 스니커즈",
+      "trend_score": 72,
+      "description": "90년대 스타일의 청키 스니커즈가 스트리트 패션 중심으로 인기",
+      "related_items": ["와이드 팬츠", "오버사이즈 후디", "버킷햇"],
+      "target_demographic": "10-20대",
+      "growth_rate": 31.7,
+      "timestamp": "2024-01-15T10:10:00Z"
+    },
+    {
+      "category": "색상 트렌드",
+      "keyword": "비비드 그린",
+      "trend_score": 69,
+      "description": "2024년 대표 컬러로 선정된 비비드 그린 계열 인기 상승",
+      "related_items": ["그린 블레이저", "민트 니트", "라임 액세서리"],
+      "target_demographic": "20-40대 여성",
+      "growth_rate": 15.3,
+      "timestamp": "2024-01-15T10:15:00Z"
+    },
+    {
+      "category": "남성 패션",
+      "keyword": "오버사이즈 셔츠",
+      "trend_score": 66,
+      "description": "편안함과 스타일을 동시에 추구하는 남성들 사이에서 오버사이즈 셔츠 인기",
+      "related_items": ["슬림 팬츠", "미니멀 스니커즈", "크로스백"],
+      "target_demographic": "20-30대 남성",
+      "growth_rate": 12.8,
+      "timestamp": "2024-01-15T10:20:00Z"
+    }
+  ],
+  "metadata": {
+    "last_updated": "2024-01-15T10:20:00Z",
+    "source": "Fashion AI Automation System",
+    "total_trends": 5,
+    "average_score": 74
+  }
+} 

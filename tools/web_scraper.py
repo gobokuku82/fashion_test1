@@ -300,6 +300,44 @@ class WebScraper:
         
         return text.strip()
     
+    def get_sample_articles(self) -> List[Dict[str, Any]]:
+        """테스트용 샘플 기사 데이터 반환"""
+        
+        sample_articles = [
+            {
+                "source": "VOGUE Korea",
+                "title": "2024 패션 트렌드 완벽 가이드",
+                "content": "올해 패션 트렌드는 지속가능성과 개성 표현에 중점을 두고 있습니다. 미니멀리즘과 맥시멀리즘이 공존하며, 개인의 취향을 자유롭게 표현할 수 있는 다양한 스타일이 주목받고 있습니다.",
+                "url": "https://vogue.com/sample1",
+                "images": [],
+                "keyword": "패션트렌드",
+                "scraped_at": datetime.now().isoformat(),
+                "note": "샘플 데이터"
+            },
+            {
+                "source": "ELLE Korea", 
+                "title": "여름 스타일링 필수 아이템",
+                "content": "이번 여름 스타일링의 핵심은 균형입니다. 클래식한 아이템과 트렌디한 요소를 적절히 조화시키는 것이 중요하며, 액세서리 활용을 통해 개성을 표현할 수 있습니다.",
+                "url": "https://elle.com/sample2",
+                "images": [],
+                "keyword": "여름패션",
+                "scraped_at": datetime.now().isoformat(),
+                "note": "샘플 데이터"
+            },
+            {
+                "source": "Harper's Bazaar Korea",
+                "title": "럭셔리 브랜드 신상 컬렉션",
+                "content": "이번 시즌 럭셔리 브랜드들의 컬렉션은 정교한 디테일과 혁신적인 소재 사용이 특징입니다. 전통적인 장인 정신과 현대적인 테크놀로지가 만나 새로운 패션 경험을 제공하고 있습니다.",
+                "url": "https://harpersbazaar.com/sample3",
+                "images": [],
+                "keyword": "럭셔리패션",
+                "scraped_at": datetime.now().isoformat(),
+                "note": "샘플 데이터"
+            }
+        ]
+        
+        return sample_articles
+    
     def is_fashion_related(self, text: str, threshold: int = 3) -> bool:
         """텍스트가 패션 관련 내용인지 판단"""
         

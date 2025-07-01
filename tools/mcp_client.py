@@ -562,6 +562,38 @@ SNS 포스팅용 텍스트와 해시태그를 작성해주세요.""",
         
         return results
     
+    def get_sample_trend_analysis(self) -> Dict[str, Any]:
+        """테스트용 샘플 트렌드 분석 반환"""
+        sample_analysis = self._get_sample_trend_analysis("trend_summary")
+        return {
+            "main_trends": [
+                "지속가능한 패션 확산",
+                "미니멀 디자인 선호",
+                "편안함 우선 트렌드",
+                "Y2K 복고 감성",
+                "비비드 컬러 인기"
+            ],
+            "predictions": [
+                "친환경 소재 사용 증가",
+                "멀티 기능성 아이템 인기", 
+                "개성 표현 아이템 확산"
+            ],
+            "business_suggestions": [
+                "지속가능성 마케팅 강화",
+                "편의성 중심 제품 개발",
+                "개성 맞춤 서비스 제공"
+            ],
+            "full_analysis": sample_analysis["result"]
+        }
+    
+    def get_sample_sentiment_analysis(self) -> Dict[str, Any]:
+        """테스트용 샘플 감성 분석 반환"""
+        return self._get_sample_sentiment_analysis()
+    
+    def get_sample_content_generation(self, content_type: str = "marketing_copy") -> Dict[str, Any]:
+        """테스트용 샘플 콘텐츠 생성 반환"""
+        return self._get_sample_content_generation(content_type)
+    
     def is_connected(self) -> bool:
         """MCP 클라이언트 연결 상태 확인"""
         return self.llm is not None 
